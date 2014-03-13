@@ -1,0 +1,27 @@
+package 'ebilling' {
+  file /ebilling_[a-zA-z][a-zA-z]_\d\.\d\.\d\.\d\.tgz/ {
+	gzip{
+	  tar {
+	    directory('apache', optional: true){
+		  file('redirects.conf')
+		}
+		directory 'ear' {
+		  ear 'wcs.ear'
+		}
+		directory('sql', optional: true) {
+		  directory 'schema1' {
+		    files(/\d\d_.*.sql/)
+		  }
+		  directory 'schema2' {
+		    files(/\d\d_.*.sql/)
+		  }
+		}
+		file 'release_notes.docx'
+		file 'test_results.xlsx'
+	  }
+	}
+  }
+  file /ebilling_[a-zA-z][a-zA-z]_\d\.\d\.\d\.\d\.md5/ {
+    checksum(type:'md5')
+  }
+}
