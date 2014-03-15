@@ -1,16 +1,11 @@
 import org.pdvl.*
 
-/*
-def b = new TestBuilder()
+
+def b = new PackageValidatingBuilder(new File('/tmp'), new File('/tmp/package'))
 b.package('ebilling') {
-  file 'kran'
-  file (type: 'gz')
-  directory('webserver') {
-    file 'redirects.conf'
+  file(~/ebilling_\d\.\d\.\d-?[a-zA-Z0-9-]*\.tgz/) {
+    gzip {
+
+    }
   }
 }
-*/
-
-def b = new PackageValidatingBuilder(new File('/tmp'))
-b.package()
-b.package('test package')
