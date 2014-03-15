@@ -15,7 +15,7 @@ public class PackageFactory extends AbstractFactory {
     }
     if ( !builder.workDirectory.canWrite() 
       || !builder.workDirectory.isDirectory() ) {
-      throw new InstantiationException("Could not build node 'package'. Working directory (${builder.workingDirectory}) is not a readable directory")
+      throw new InstantiationException("Could not build node 'package'. Working directory (${builder.workDirectory}) is not a writeable directory")
     }
     println "[INFO] Validating package ${value}..."
     return null
