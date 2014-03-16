@@ -13,7 +13,7 @@ class FileFactoryTest extends Specification{
 
 	private File createTempFile(String name) {
 		def tmpDir = new File(System.getProperty("java.io.tmpdir"))	
-		def testFile = new File(tmpDir, 'test.file')
+		def testFile = new File(tmpDir, name)
 		//create an empty file
 		FileUtils.touch(testFile)
 		return testFile
