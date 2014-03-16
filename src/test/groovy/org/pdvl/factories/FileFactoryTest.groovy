@@ -2,7 +2,7 @@ package org.pdvl.factories
 
 import spock.lang.Specification
 import org.pdvl.PackageValidatingBuilder
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FileUtils
 
 /**
  * Test Class for the FileFactory 
