@@ -39,5 +39,6 @@ public class GzipFactory extends AbstractFactory {
     println "[INFO] Uncopressed files too ${builder.workDirectory}"
     //Put the files into the builders context
     builder.context['files'] = outputFiles
+	return outputFiles
   }
 }
